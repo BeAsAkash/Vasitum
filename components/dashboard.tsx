@@ -8,7 +8,7 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { ResponsiveLine } from "@nivo/line"
 import {SVGProps} from 'react';
-import { IconProps } from './IconProps';
+
 export function Dashboard() {
   const [isDarkMode, setIsDarkMode] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
