@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { ResponsiveLine } from "@nivo/line"
-import {SVGProps} from 'react';
+import {DetailedHTMLProps, HTMLProps,SVGProps} from 'react';
 
 export function Dashboard() {
   const [isDarkMode, setIsDarkMode] = useState(false)
@@ -307,6 +307,7 @@ export function Dashboard() {
 interface IconProps extends SVGProps<SVGSVGElement> {
   className?: string;
 }
+interface LineChartProps extends DetailedHTMLProps<HTMLProps<HTMLDivElement>, HTMLDivElement> {}
 
 
 
@@ -445,7 +446,7 @@ function LayoutDashboardIcon({ className, ...props }: IconProps) {
   );
 }
 
-function LineChart({ className, ...props }: IconProps) {
+function LineChart({ className, ...props }: LineChartProps) {
   return (
     <div className={className} {...props}>
       <ResponsiveLine
