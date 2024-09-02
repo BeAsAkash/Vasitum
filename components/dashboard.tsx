@@ -7,7 +7,8 @@ import { Button } from "@/components/ui/button"
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { ResponsiveLine } from "@nivo/line"
-
+import {SVGProps} from 'react';
+import { IconProps } from './IconProps';
 export function Dashboard() {
   const [isDarkMode, setIsDarkMode] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -303,10 +304,16 @@ export function Dashboard() {
     </div>
   )
 }
+interface IconProps extends SVGProps<SVGSVGElement> {
+  className?: string;
+}
 
-function BellIcon(props) {
+
+
+function BellIcon({ className, ...props }: IconProps) {
   return (
     <svg
+      className={className}
       {...props}
       xmlns="http://www.w3.org/2000/svg"
       width="24"
@@ -321,13 +328,13 @@ function BellIcon(props) {
       <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9" />
       <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0" />
     </svg>
-  )
+  );
 }
 
-
-function CalendarIcon(props) {
+function CalendarIcon({ className, ...props }: IconProps) {
   return (
     <svg
+      className={className}
       {...props}
       xmlns="http://www.w3.org/2000/svg"
       width="24"
@@ -344,13 +351,13 @@ function CalendarIcon(props) {
       <rect width="18" height="18" x="3" y="4" rx="2" />
       <path d="M3 10h18" />
     </svg>
-  )
+  );
 }
 
-
-function ChevronDownIcon(props) {
+function ChevronDownIcon({ className, ...props }: IconProps) {
   return (
     <svg
+      className={className}
       {...props}
       xmlns="http://www.w3.org/2000/svg"
       width="24"
@@ -364,13 +371,13 @@ function ChevronDownIcon(props) {
     >
       <path d="m6 9 6 6 6-6" />
     </svg>
-  )
+  );
 }
 
-
-function DotIcon(props) {
+function DotIcon({ className, ...props }: IconProps) {
   return (
     <svg
+      className={className}
       {...props}
       xmlns="http://www.w3.org/2000/svg"
       width="24"
@@ -382,15 +389,20 @@ function DotIcon(props) {
       strokeLinecap="round"
       strokeLinejoin="round"
     >
-      <circle cx="12.1" cy="12.1" r="1" />
+      <circle cx="12" cy="12" r="1" />
+      <circle cx="12" cy="5" r="1" />
+      <circle cx="12" cy="19" r="1" />
     </svg>
-  )
+  );
 }
 
 
-function ExpandIcon(props) {
+
+
+function ExpandIcon({ className, ...props }: IconProps) {
   return (
     <svg
+      className={className}
       {...props}
       xmlns="http://www.w3.org/2000/svg"
       width="24"
@@ -402,18 +414,18 @@ function ExpandIcon(props) {
       strokeLinecap="round"
       strokeLinejoin="round"
     >
-      <path d="m21 21-6-6m6 6v-4.8m0 4.8h-4.8" />
-      <path d="M3 16.2V21m0 0h4.8M3 21l6-6" />
-      <path d="M21 7.8V3m0 0h-4.8M21 3l-6 6" />
-      <path d="M3 7.8V3m0 0h4.8M3 3l6 6" />
+      <path d="M21 15v4a2 2 0 0 1-2 2h-4" />
+      <path d="m21 21-6-6" />
+      <path d="M3 9V5a2 2 0 0 1 2-2h4" />
+      <path d="m3 3 6 6" />
     </svg>
-  )
+  );
 }
 
-
-function LayoutDashboardIcon(props) {
+function LayoutDashboardIcon({ className, ...props }: IconProps) {
   return (
     <svg
+      className={className}
       {...props}
       xmlns="http://www.w3.org/2000/svg"
       width="24"
@@ -430,13 +442,12 @@ function LayoutDashboardIcon(props) {
       <rect width="7" height="9" x="14" y="12" rx="1" />
       <rect width="7" height="5" x="3" y="16" rx="1" />
     </svg>
-  )
+  );
 }
 
-
-function LineChart(props) {
+function LineChart({ className, ...props }: IconProps) {
   return (
-    <div {...props}>
+    <div className={className} {...props}>
       <ResponsiveLine
         data={[
           {
@@ -504,13 +515,13 @@ function LineChart(props) {
         role="application"
       />
     </div>
-  )
+  );
 }
 
-
-function MenuIcon(props) {
+function MenuIcon({ className, ...props }: IconProps) {
   return (
     <svg
+      className={className}
       {...props}
       xmlns="http://www.w3.org/2000/svg"
       width="24"
@@ -522,17 +533,17 @@ function MenuIcon(props) {
       strokeLinecap="round"
       strokeLinejoin="round"
     >
-      <line x1="4" x2="20" y1="12" y2="12" />
-      <line x1="4" x2="20" y1="6" y2="6" />
-      <line x1="4" x2="20" y1="18" y2="18" />
+      <path d="M4 12h16" />
+      <path d="M4 6h16" />
+      <path d="M4 18h16" />
     </svg>
-  )
+  );
 }
 
-
-function MessageCircleIcon(props) {
+function MessageCircleIcon({ className, ...props }: IconProps) {
   return (
     <svg
+      className={className}
       {...props}
       xmlns="http://www.w3.org/2000/svg"
       width="24"
@@ -544,15 +555,15 @@ function MessageCircleIcon(props) {
       strokeLinecap="round"
       strokeLinejoin="round"
     >
-      <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" />
+      <path d="M21 11.5a8.38 8.38 0 0 1-1.2 4.4 8.5 8.5 0 0 1-7.5 4.6 8.38 8.38 0 0 1-4.4-1.2L3 21l1.7-4.4A8.38 8.38 0 0 1 3 12a8.5 8.5 0 0 1 4.6-7.5 8.5 8.5 0 0 1 12 7.5Z" />
     </svg>
-  )
+  );
 }
 
-
-function PinIcon(props) {
+function PinIcon({ className, ...props }: IconProps) {
   return (
     <svg
+      className={className}
       {...props}
       xmlns="http://www.w3.org/2000/svg"
       width="24"
@@ -564,16 +575,17 @@ function PinIcon(props) {
       strokeLinecap="round"
       strokeLinejoin="round"
     >
-      <line x1="12" x2="12" y1="17" y2="22" />
-      <path d="M5 17h14v-1.76a2 2 0 0 0-1.11-1.79l-1.78-.9A2 2 0 0 1 15 10.76V6h1a2 2 0 0 0 0-4H8a2 2 0 0 0 0 4h1v4.76a2 2 0 0 1-1.11 1.79l-1.78.9A2 2 0 0 0 5 15.24Z" />
+      <path d="m17.7 6.3-11.4 11.4a2 2 0 1 0 2.8 2.8L20.5 9" />
+      <path d="m8 2 4 4-5 5-3-1-2 2 3 3-4 4" />
+      <path d="m20 7 2 2-4 4" />
     </svg>
-  )
+  );
 }
 
-
-function PowerIcon(props) {
+function PowerIcon({ className, ...props }: IconProps) {
   return (
     <svg
+      className={className}
       {...props}
       xmlns="http://www.w3.org/2000/svg"
       width="24"
@@ -586,15 +598,15 @@ function PowerIcon(props) {
       strokeLinejoin="round"
     >
       <path d="M12 2v10" />
-      <path d="M18.4 6.6a9 9 0 1 1-12.77.04" />
+      <path d="M18.36 18.37a9 9 0 1 0-12.73 0" />
     </svg>
-  )
+  );
 }
 
-
-function RecycleIcon(props) {
+function RecycleIcon({ className, ...props }: IconProps) {
   return (
     <svg
+      className={className}
       {...props}
       xmlns="http://www.w3.org/2000/svg"
       width="24"
@@ -606,20 +618,16 @@ function RecycleIcon(props) {
       strokeLinecap="round"
       strokeLinejoin="round"
     >
-      <path d="M7 19H4.815a1.83 1.83 0 0 1-1.57-.881 1.785 1.785 0 0 1-.004-1.784L7.196 9.5" />
-      <path d="M11 19h8.203a1.83 1.83 0 0 0 1.556-.89 1.784 1.784 0 0 0 0-1.775l-1.226-2.12" />
-      <path d="m14 16-3 3 3 3" />
-      <path d="M8.293 13.596 7.196 9.5 3.1 10.598" />
-      <path d="m9.344 5.811 1.093-1.892A1.83 1.83 0 0 1 11.985 3a1.784 1.784 0 0 1 1.546.888l3.943 6.843" />
-      <path d="m13.378 9.633 4.096 1.098 1.097-4.096" />
+      <path d="M21 11h-5l1-7M21 11l-9 7-4-4M21 11l-9-7-1.5 5M7.9 15.1 4 21m-.9-6.1 4.8-3.5" />
+      <path d="M8.2 7.2 3 6l2.1 5.1" />
     </svg>
-  )
+  );
 }
 
-
-function SearchIcon(props) {
+function SearchIcon({ className, ...props }: IconProps) {
   return (
     <svg
+      className={className}
       {...props}
       xmlns="http://www.w3.org/2000/svg"
       width="24"
@@ -634,13 +642,13 @@ function SearchIcon(props) {
       <circle cx="11" cy="11" r="8" />
       <path d="m21 21-4.3-4.3" />
     </svg>
-  )
+  );
 }
 
-
-function SettingsIcon(props) {
+function SettingsIcon({ className, ...props }: IconProps) {
   return (
     <svg
+      className={className}
       {...props}
       xmlns="http://www.w3.org/2000/svg"
       width="24"
@@ -652,16 +660,16 @@ function SettingsIcon(props) {
       strokeLinecap="round"
       strokeLinejoin="round"
     >
-      <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z" />
       <circle cx="12" cy="12" r="3" />
+      <path d="M19.4 15a1.8 1.8 0 0 0 .4 2l.1.1a2.1 2.1 0 1 1-2.9 3l-.1-.1a1.8 1.8 0 0 0-2 0h-.2a1.8 1.8 0 0 0-1 .5 1.8 1.8 0 0 0-.5 1v.2a2.1 2.1 0 0 1-4.1 0v-.2a1.8 1.8 0 0 0-1.5-1.5h-.2a1.8 1.8 0 0 0-1-.5 1.8 1.8 0 0 0-2.1.4l-.1.1a2.1 2.1 0 0 1-3-2.9l.1-.1a1.8 1.8 0 0 0 0-2v-.2a1.8 1.8 0 0 0-.5-1 1.8 1.8 0 0 0-1.5-.5h-.2a2.1 2.1 0 1 1 0-4.1h.2a1.8 1.8 0 0 0 1.5-1.5v-.2a1.8 1.8 0 0 0-.4-2l-.1-.1a2.1 2.1 0 0 1 2.9-3l.1.1a1.8 1.8 0 0 0 2 0h.2a1.8 1.8 0 0 0 1-.5 1.8 1.8 0 0 0 .5-1v-.2a2.1 2.1 0 1 1 4.1 0v.2a1.8 1.8 0 0 0 1.5 1.5h.2a1.8 1.8 0 0 0 1 .5 1.8 1.8 0 0 0 2.1-.4l.1-.1a2.1 2.1 0 1 1 3 2.9l-.1.1a1.8 1.8 0 0 0 0 2v.2a1.8 1.8 0 0 0 .5 1h.2a1.8 1.8 0 0 0 1.5 1.5h.2a2.1 2.1 0 1 1 0 4.1h-.2a1.8 1.8 0 0 0-1.5 1.5v.2z" />
     </svg>
-  )
+  );
 }
 
-
-function UserIcon(props) {
+function UserIcon({ className, ...props }: IconProps) {
   return (
     <svg
+      className={className}
       {...props}
       xmlns="http://www.w3.org/2000/svg"
       width="24"
@@ -673,8 +681,8 @@ function UserIcon(props) {
       strokeLinecap="round"
       strokeLinejoin="round"
     >
-      <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
       <circle cx="12" cy="7" r="4" />
+      <path d="M5.5 20a6.5 6.5 0 0 1 13 0" />
     </svg>
-  )
+  );
 }
